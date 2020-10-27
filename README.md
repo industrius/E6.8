@@ -7,10 +7,13 @@ docker pull python
 docker pull memcached
 
 2. Запустить внутри каталога для создания контейнера
+
 dcoker-compose build
 
 3. Для запуска контейнеров
+
 docker-compose up -d
 
 4. Открыть практическое задание E6.8
+
 http://<ip-адрес сервера>:8000
