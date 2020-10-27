@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  web:
+    build: ./application
+    command: python app.py
+    volumes:
+      - ./application:/data
+    ports:
+      - 8000:8000
+    depends_on:
+      - cache
+    environment:
+      - CACHE=cache
+
+  cache:
+    image: memcached
+    ports:
+      - 11211:11211
+    entrypoint:
+      - memcached
+      - -m 64
+

@@ -1,0 +1,6 @@
+FROM python
+RUN mkdir /data
+WORKDIR /data
+ADD requirments.txt /data
+RUN pip install -r requirments.txt
+ADD . /data
